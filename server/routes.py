@@ -24,6 +24,17 @@ def get_json():
     return data
 
 
+@api.get("/")
+def index():
+    return jsonify({
+        "message": "Workout Application API",
+        "endpoints": {
+            "workouts": "/workouts",
+            "exercises": "/exercises"
+        }
+    }), 200
+
+
 # --- Workouts Endpoints ---
 
 @api.get("/workouts")
